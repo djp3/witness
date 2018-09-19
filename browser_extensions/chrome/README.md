@@ -1,3 +1,6 @@
+Startup
+  To install dependencies: `yarn install`
+
 Building the extension:
 
   `yarn build`
