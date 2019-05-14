@@ -24,8 +24,8 @@ def credits_view(request, *args, **kwargs):
 	
 	return render(request, "credits.html", {})
 
-def index_view(request, *args, **kwargs):
+def url_view(request, *args, **kwargs):
 	print (args, kwargs)
 	print (request.user)
 	
-	return render(request, "index.html", {})
+	return render(request, "url.html", {})
