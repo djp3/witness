@@ -1,52 +1,10 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+  <!-- Abstract page header -->
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Witness This Media</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
-</head>
-
-<body>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href=""><font size="+2">Witness</font></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/..">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Credits</a>
-          </li>
-         <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li> -->
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+ {% block content %}
   <!-- Page Content -->
   <div class="container">
     <div class="row">
@@ -56,9 +14,6 @@
         <p>This project is led by <a href="https://www.djp3.net/">Prof. Don Patterson</a> in collaboration with Prof. Bill Tomlinson</p>
         <p><font size="+2">Graphics</font></p>
         <p>Thanks to the following who have made their work available for our use:</p>
-
-
-
         <ul class="list-unstyled">
           <li><img src="{% static 'img/about.png' %}" alt="about icon" height="50" width="50"/> by Miguel C Balandrano from the Noun Project</li>
           <li><img src="{% static 'img/motivation.png' %}" alt="motivation icon" height="50" width="50"/> by samuel nudds from the Noun Project</li>
@@ -68,10 +23,5 @@
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
-</body>
-
-</html>
+  
+{% endblock %}
