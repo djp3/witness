@@ -6,14 +6,103 @@
 
 
  {% block content %}
-  <!-- Page Content -->
+
+
+<!-- Logo plus eye logo -->
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1><img src="static/img/wordmark.png" alt="witness word mark" /></h1>
+        <p class="lead"><img src="static/img/eyelogo.png" alt="eye logo" > </p>
+        {{ my_html | safe }}
+
+
+
+<!-- On page tab headers -->
+<div class="container">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu1">Submit</a>
+    </li>
+  </ul>
+
+  <!-- Tab contents -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <!-- About tab contents -->
+      <div class="justify-content-center row">
+          <div class="text-center col">
+            <div class="media-body">
+              <img src="static/img/about.png" alt="about icon" class="media-object" style="height: 100px;">
+              <h4 class="media-heading">About</h4>
+              Witness provides evidence of media tampering
+            </div>
+          </div>
+
+        <div class = 'text-center col'>
+          <div class "media-body">
+            <img src = "static/img/motivation.png" alt = "motivation icon" class = "media-object" style = "height: 100px;">
+            <h4 class ="media-heading">Motivation </h4>     
+            It is easy to make fake, but realistic media. For example this video:
+            <div class="pt-3 media-body">
+                <iframe title="Obama Deep Fake" src="https://www.youtube.com/embed/cQ54GDm1eL0" width="250" height="*" frameborder="0" allow="autoplay; encrypted-media"allowfullscreen style="padding-bottom: 65px;">
+                </iframe>  
+            </div>
+          </div>
+        </div>
+        <div class="text-center col">
+          <div class="media-body">
+            <img src="static/img/blockchain.png" alt="blockchain icon" class="media-object" style="height: 100px;">
+            <h4 class="media-heading">Technology</h4>
+            Blockchain
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Submit tab with form -->
+    <div id="menu1" class="container tab-pane fade"><br>
+      <div  style='width: 250px; margin: 0 auto;'> 
+        <form method='POST' action='.'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' value='Submit'>
+        </form>
+      </div>
+
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- old html -->
+
+  <!-- Page Content ->
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
       	<h1><img src="static/img/wordmark.png" alt="witness word mark" /></h1>
         <p class="lead"><img src="static/img/eyelogo.png" alt="eye logo" style="padding-top: 0px; padding-bottom: 65px;"> </p>
         {{ my_html | safe }}
-        <!--<ul class="list-unstyled"> -->
+        <!--<ul class="list-unstyled"> ->
         
         <div class="justify-content-center row">
           <div class="text-center col">
@@ -45,13 +134,5 @@
       </div>
     </div>
   </div>
-</div>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
-</body>
-
-</html>
+</div> -->
 {% endblock %}

@@ -6,15 +6,40 @@
  {% block content %}
   <!-- Page Content -->
   
-
+  	<script type="text/javascript">
+  		$(document).ready(function()){
+  			$("#button").click(function() {
+  				console.log("okay this did something");
+  			})
+  		}
+  	</script>
   <!-- URLform -->
 	<div  style='width: 250px; margin: 0 auto;'> 
-		<form method='POST' action='.'>{% csrf_token %}
-   		{{ form.as_p }} 
-    	<input type='submit' value='Submit'>
+		<form method='POST' action='.'>
+		{% csrf_token %}
+   		{{ form.as_p }}
+    	<input type='submit' value='Submit' id='button'>
     	</form>
 	</div>
 
-</body>
-</html> 
+<!--
+	<script type="text/javascript">
+		function SendUrl(){
+			$('.ajaxProgress').show();
+			$.ajax({
+				type: "POST",
+				url: //"server url",
+				dataType: "json",
+				async: true,
+				data: { csrfmiddlewaretoken: '{{ csrf_token }}'},
+				success: function (json) {
+					$('#output').html(json.message);
+					$('.ajaxProgress').hide();
+				}
+			})
+		} 
+
+
+	</script>-->
+
 {% endblock %}
