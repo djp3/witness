@@ -11,16 +11,41 @@
     <div class="row">
       <div class="col-lg-12 text-center">
       	<h1><img src="static/img/wordmark.png" alt="witness word mark" /></h1>
-        <p class="lead"><img src="static/img/eyelogo.png" alt="eye logo" /></p>
+        <p class="lead"><img src="static/img/eyelogo.png" alt="eye logo" style="padding-top: 0px; padding-bottom: 65px;"> </p>
         {{ my_html | safe }}
-        <ul class="list-unstyled">
-          <li>About: Witness provides evidence of media tampering</li>
-          <li>Motivation: It is easy to make fake, but realistic media. For example this video:<p><iframe src="https://www.youtube.com/embed/cQ54GDm1eL0" width="350" height="197" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p></li>
-          <li>Technology: Blockchain</li>
-        </ul>
+        <!--<ul class="list-unstyled"> -->
+        
+        <div class="justify-content-center row">
+          <div class="text-center col">
+            <div class="media-body">
+              <img src="static/img/about.png" alt="about icon" class="media-object" style="height: 100px;">
+              <h4 class="media-heading">About</h4>
+              Witness provides evidence of media tampering
+            </div>
+          </div>
+
+        <div class = 'text-center col'>
+          <div class "media-body">
+            <img src = "static/img/motivation.png" alt = "motivation icon" class = "media-object" style = "height: 100px;">
+            <h4 class ="media-heading">Motivation </h4>     
+            It is easy to make fake, but realistic media. For example this video:
+            <div class="pt-3 media-body">
+                <iframe title="Obama Deep Fake" src="https://www.youtube.com/embed/cQ54GDm1eL0" width="250" height="*" frameborder="0" allow="autoplay; encrypted-media"allowfullscreen style="padding-bottom: 65px;">
+                </iframe>  
+            </div>
+          </div>
+        </div>
+        <div class="text-center col">
+          <div class="media-body">
+            <img src="static/img/blockchain.png" alt="blockchain icon" class="media-object" style="height: 100px;">
+            <h4 class="media-heading">Technology</h4>
+            Blockchain
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>

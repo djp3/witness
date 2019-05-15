@@ -8,18 +8,13 @@
   
 
   <!-- URLform -->
-
-<div  style='width: 250px; margin: 0 auto;'> 
-
-
-  <form method='POST' action='.'>{% csrf_token %}
-   
-   	{{ form.as_p }} 
-    <input type='submit' value='Submit'>
-
-  </form>
-</div>
+	<div  style='width: 250px; margin: 0 auto;'> 
+		<form method='POST' action='.'>{% csrf_token %}
+   		{{ form.as_p }} 
+    	<input type='submit' value='Submit'>
+    	</form>
+	</div>
 
 </body>
-</html>
+</html> 
 {% endblock %}
