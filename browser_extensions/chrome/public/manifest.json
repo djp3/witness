@@ -1,13 +1,15 @@
 {
   "manifest_version": 2,
 
-  "name": "Witness Extension",
-  "description": "Official Witness Chrome Extension",
+  "name": "Witness This Media",
+  "short_name": "Witness",
+  "description": "Official Witness This Media Media Verification Extension",
   "version": "0.0.1",
 
   "browser_action": {
     "default_popup": "index.html",
-    "default_title": "Witness"
+    "default_title": "Witness This Media",
+	"default_icon": "favicon.ico"
   },
   "content_scripts": [
     {
@@ -16,5 +18,5 @@
     }
   ],
   "icons": { },
-  "permissions": [ ]
+  "permissions": []
 }

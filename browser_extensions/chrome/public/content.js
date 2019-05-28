@@ -3,6 +3,7 @@
  */
 chrome.runtime.onMessage.addListener(function (msg, sender, response) {
   console.log("Witnessing Page ٩(๏_๏)۶");
+  
   if ((msg.from === 'popup')) {
     images = find_images();
     response({images: images});
