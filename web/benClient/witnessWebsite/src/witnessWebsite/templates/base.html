@@ -56,10 +56,35 @@
 		replace me
 		{% endblock %}
 <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+ <!-- <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <!-- Ajax request for url-form from home.html -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var urlForm = $(".url-form")
+      urlForm.submit(function(event){
+        event.preventDefault();
+        console.log("form not sending");
+        var formData = $(this).serialize();
+        console.log($(this).serialize());
 
+        $.ajax({
+          url : "https://reqres.in/api/users",
+          type : "POST",
+          data: {
+            imageURL : formData
+          },
+          success: function(response){
+            console.log(response);
+            //$('#ajax-content').load('file',null,function(){ use this to update page content
 
+            //});
+          }
+        });
+      })
+    })
+  </script>
 </body>
 
 </html>
