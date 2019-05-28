@@ -62,14 +62,19 @@
         </div>
       </div>
     </div>
+
     <!-- Submit tab with form -->
     <div id="menu1" class="container tab-pane fade"><br>
       <div  style='width: 250px; margin: 0 auto;'> 
-        <form method='POST' action='.'>
+
+        <!-- Ajax request in base.html-->
+        <form class="url-form" method='POST' action='.'>
         {% csrf_token %}
         {{ form.as_p }}
-        <input type='submit' value='Submit'>
+        <input type='submit' value='Submit' id='url'>
         </form>
+        <div id="ajax-content">
+        </div>
       </div>
 
     </div>
@@ -102,7 +107,7 @@
       	<h1><img src="static/img/wordmark.png" alt="witness word mark" /></h1>
         <p class="lead"><img src="static/img/eyelogo.png" alt="eye logo" style="padding-top: 0px; padding-bottom: 65px;"> </p>
         {{ my_html | safe }}
-        <!--<ul class="list-unstyled"> ->
+        <ul class="list-unstyled"> ->
         
         <div class="justify-content-center row">
           <div class="text-center col">

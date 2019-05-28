@@ -15,6 +15,7 @@ from django.core.exceptions import ValidationError
 # Form used on the home page and url page. askes user for a url and varifies it with exceptions
 class SubmitUrlForm(forms.Form):
 	url = forms.CharField(label = 'Submit URL') #validators = [validate_url]
+ 
 
 
 	#cleans up user input
