@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Witness Extension",
+  "description": "Official Witness Chrome Extension",
+  "version": "0.0.1",
+
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Witness"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ], 
+      "js": ["jQuery.js", "content.js"]
+    }
+  ],
+
+  "backround": {
+    "js": ["backround.js"],
+    "html":["jQuery.html"]
+  },
+
+  "icons": { },
+  "permissions": [ ]
+}
