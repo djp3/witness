@@ -1,30 +1,36 @@
+
+// global array containg all images/backround-images 
+var allImages= find_everything();
+
+/*
+ * Each time a new page is loaded, all images are send via send_everything during an idle period
+ */
+window.onload = function(){
+  console.log("Witnessing Page ٩(๏_๏)۶");
+  requestIdleCallback(function(){send_everything(allImages)}); // exectutes when browser has some free time
+}
+
 /*
  * Send images to popup on request
  */
 chrome.runtime.onMessage.addListener(function (msg, sender, response) {
-  console.log("Witnessing Page ٩(๏_๏)۶");
   if ((msg.from === 'popup')) {
-    //images = find_images();
-    images = find_and_send_everything();
+    images = allImages; //TODO: ask Paterson about pointers...allImages is a large object,we dont wana make copies
     response({images: images});
-
   }
   console.log("okay this worked");
-});
+  });
+
+
 
 /*
- * Coalesces the functionality of find_images(), find_backroundImg(), and send_req() wrapped
+ * Coalesces the functionality of find_images(), find_backroundImg() wrapped
  * with an exception.
- * return: the Array of all img and bakcround image elements that were sent via Ajax request
+ * return: the Array of all img and bakcround image elements that were found
  */
-function find_and_send_everything(){
+function find_everything(){
   try {
-    /*
-    var array = find_images();
-    ajax_req(find_backroundImg(array));
-    return array; */
-   return ajax_req(find_backroundImg(find_images()));
-  //return ajax_req(find_images());
+   return find_backroundImg(find_images());
   }
   catch(error) {
     console.error(error);
@@ -68,11 +74,11 @@ function find_backroundImg(imageLinks){
 }
 
 /*
- * Sends an Ajax request for every element imaheLinks
+ * Sends an Ajax request for every element in imageLinks
  * paramater: imageLinks is the array from find_backroundImg(find_images())
  * return: imageLinks
  */
-function ajax_req(imageLinks){
+function send_everything(imageLinks){
   let count = 0; 
   const iter = imageLinks.entries();
   for (let i of iter) {
@@ -130,3 +136,17 @@ function find_backroundImg(imageLinks){
   return imageLinks;
 }
    */
+
+    /*
+chrome.runtime.onMessage.addListener(function (msg, sender, response) {
+  console.log("Witnessing Page ٩(๏_๏)۶");
+ // extendJquery();
+  if ((msg.from === 'popup')) {
+    //images = find_images();
+    images = find_and_send_everything();
+    response({images: images});
+
+  }
+  console.log("okay this worked");
+});
+  */
