@@ -1,5 +1,4 @@
 <target name="junit" depends="compile">
-
   <junit printsummary="yes" haltonfailure="no">
 
 	<classpath refid="test.path" />
