@@ -1,0 +1,18 @@
+<target name="junit" depends="compile">
+
+  <junit printsummary="yes" haltonfailure="no">
+
+	<classpath refid="test.path" />
+	<classpath location="${test.classes.dir}" />
+		
+	<formatter type="xml" />
+	<formatter type="plain" />
+		
+	<batchtest fork="yes" todir="${report.dir}">
+		<fileset dir="${test.dir}">
+			<include name="**/*Test*.java" />
+		</fileset>
+	</batchtest>
+		
+  </junit>
+</target>
