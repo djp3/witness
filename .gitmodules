@@ -1,3 +1,7 @@
 [submodule "browser_extensions/witnessextention"]
 	path = browser_extensions/witnessextention
 	url = git@github.com:djp3/witnessextention.git
+[submodule "browser_extensions/witness_chrome_extension"]
+	path = browser_extensions/witness_chrome_extension
+	url = git@github.com:djp3/witness_chrome_extension.git
+	branch = master
