@@ -1,0 +1,3 @@
+[submodule "browser_extensions/witnessextention"]
+	path = browser_extensions/witnessextention
+	url = git@github.com:djp3/witnessextention.git
