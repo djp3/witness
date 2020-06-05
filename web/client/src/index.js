@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import ReactGA from 'react-ga';
+//import classnames from 'classnames';
+import TabBar from './tabBar';	
 import {
     Collapse,
     Navbar,
@@ -29,6 +31,7 @@ import {
 	CarouselCaption*/
 
 } from 'reactstrap';
+require ('./styles.css')
 
 
 /* Add Google Analytics */
@@ -169,12 +172,12 @@ class NavBar extends Component {
 					<div class="navbar-nav-scroll">
 						<Nav>
 							<NavItem>
-								<NavLink href="https://www.facebook.com/WitnessThisMedia" className="p-2">
+								<NavLink href="https://www.facebook.com/WitnessThisMedia" target="_blank" className="p-2">
 									<Button color="secondary" size="sm"><i class="fab fa-facebook"></i></Button>{' '}
 								</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="https://twitter.com/WitnessDisMedia" className="p-2">
+								<NavLink href="https://twitter.com/WitnessDisMedia" target="_blank" className="p-2">
 									<Button color="secondary" size="sm"><i class="fab fa-twitter"></i></Button>{' '}
 								</NavLink>
 							</NavItem>
@@ -186,11 +189,14 @@ class NavBar extends Component {
 	}
 }
 
+
+
+
 class Splash extends Component{
 
 	render() {
 		return (
-			<Container fluid={true}>
+     			<Container fluid={true}>
 				<Row className="justify-content-center">
 					<Col className="text-center">
    					     <Media object className="img-fluid" src="assets/images/wordmark.png" alt="witness word mark"/>
@@ -219,7 +225,7 @@ class Splash extends Component{
 							</Media>
 								It is easy to make fake, but realistic media. For example this video:
 							<Media body className="pt-3">
-								<iframe title="Obama Deep Fake" width="250" height="*" src="https://www.youtube.com/embed/cQ54GDm1eL0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+								<iframe title="Obama Deep Fake" width="250" height="*" src="https://www.youtube.com/embed/cQ54GDm1eL0?rel=0" frameBorder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 							</Media>
 						</Media>
 					</Col>
@@ -389,9 +395,17 @@ class MyApp extends Component {
 			<Router>
 				<div>
 					<MyHead />
-
+		
 					<NavBar />
-				
+					<TabBar>
+		       	<div label="About">
+		          Witness provides evidence of media tampering. This is a project led by Professor Don Patterson in hopes to help counteract the widespread phenomenon of fake news
+		        </div>
+		        <div label="Contact">
+		          You can contact me at dpatterson@westmont.edu.
+		        </div>
+              
+          </TabBar>
 
 					<main role="main">
 						<Route exact path="/" component={Splash}/>
